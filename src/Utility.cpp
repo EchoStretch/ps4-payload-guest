@@ -174,7 +174,7 @@ void Utility::LaunchShellcode(Application *p_App, const std::string &p_Path) {
 
     return;
   }
-  if (MemoryProtectedCreate(&g_Shellcode, 0x100000) != 0) {
+  if (MemoryProtectedCreate(&g_Shellcode, 0x150000) != 0) {
     close(s_PayloadFileDescriptor);
     std::free(g_Shellcode);
     notifi(NULL, s_App->Lang->Get("errorShellcodeMprotect").c_str(), p_Path.c_str());
